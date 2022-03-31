@@ -20,7 +20,9 @@ export function Login() {
     // check if the response is OK
     if (response.status === 200) {
       // if OK we save the token to local storage
-      localStorage.setItem("token", `Bearer ${response.data}`);
+      localStorage.setItem("token", `Bearer ${response.data.token}`);
+      // and save user to localstorage
+      localStorage.setItem("user", JSON.stringify(response.data.user));
     }
   };
 
