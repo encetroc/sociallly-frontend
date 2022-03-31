@@ -48,7 +48,6 @@ export function Tweet({ id, content, setTweets, tweet }) {
     });
     handleCancel();
   };
-  console.log(tweet);
   return (
     <div className="tweet">
       <img

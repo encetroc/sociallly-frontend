@@ -1,10 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AddTweet, ListOfTweets, Navigation } from "../components";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context";
 
 export function Home() {
   const [tweets, setTweets] = useState([]);
+  // user the auth context to get the user
+  const { user } = useContext(AuthContext);
+  // check if user is correct
+  console.log(user);
 
   // function to get tweets from the backend, this was moved from inside useEffect
   const getTweets = async () => {
