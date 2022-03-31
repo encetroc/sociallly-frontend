@@ -9,7 +9,6 @@ export function Home() {
   // user the auth context to get the user
   const { user } = useContext(AuthContext);
   // check if user is correct
-  console.log(user);
 
   // function to get tweets from the backend, this was moved from inside useEffect
   const getTweets = async () => {

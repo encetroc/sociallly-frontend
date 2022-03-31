@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Avatar from "../../assets/avatar.jpg";
+import { AuthContext } from "../../context";
 
 export function User() {
-  const [user, setUser] = useState(null);
+  // user the auth context to get the user
+  const { user } = useContext(AuthContext);
+  /* const [user, setUser] = useState(null);
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user")));
-  }, []);
+  }, []); */
   return (
     <div className="user_container">
       <img
