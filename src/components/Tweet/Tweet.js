@@ -3,7 +3,7 @@ import Avatar from "../../assets/avatar.jpg";
 import "./Tweet.css";
 
 // I receuve the id, the content and the setTweets function
-export function Tweet({ id, content, setTweets }) {
+export function Tweet({ id, content, setTweets, tweet }) {
   const [showAll, setShowAll] = useState(false);
   const [edit, setEdit] = useState(false);
   const [newTweetContent, setNewTweetContent] = useState(content);
@@ -48,6 +48,7 @@ export function Tweet({ id, content, setTweets }) {
     });
     handleCancel();
   };
+  console.log(tweet);
   return (
     <div className="tweet">
       <img
@@ -58,6 +59,7 @@ export function Tweet({ id, content, setTweets }) {
         alt="avatar_image"
       />
       <div className="tweet__input">
+        <div className="username">{`${tweet.user.firstName} ${tweet.user.lastName}`}</div>
         {edit ? (
           <textarea
             value={newTweetContent}

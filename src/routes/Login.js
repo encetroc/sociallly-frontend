@@ -15,7 +15,7 @@ export function Login() {
       email,
       password,
     };
-    // axios request, you get back a response containing the token
+    // axios request (token and user are inside of response), you get back a response containing the token
     const response = await axios.post(url, data);
     // check if the response is OK
     if (response.status === 200) {
